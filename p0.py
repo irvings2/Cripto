@@ -2,14 +2,19 @@ from tkinter import *
 
 raiz = Tk()
 raiz.title("Practica 0")
-miFrame = Frame(raiz, width=500, height=400)
-miFrame.pack()
 
-Label1 = Label(miFrame, text="c=", font=("Comc Sans MS",18))
-Label1.place(x=150,y=200)
+label1 = Label(raiz, text="c=", font=("Comic Sans MS",18)).grid(row=2, pady=4, sticky="e", padx=4)
+archivo = Label(raiz, text="Archivo", font=("Comic Sans MS",18)).grid(row=3, pady=4, sticky="e", padx=4)
 
-Label2 = Label(miFrame, text="Archivo", font=("Comc Sans MS",18))
-Label2.place(x=120,y=240)
+e1 = Entry(raiz)
+e2 = Entry(raiz)
+
+e1.grid(row=2, column=1, padx=10, pady=10)
+e2.grid(row=3, column=1, padx=10, pady=10)
+
+boton1 = Button(raiz, text='Cifrar', width=10, height=2, font=("Comic Sans MS",10)).grid(row=0, column=0, pady=4)
+boton2 = Button(raiz, text='Descifrar', width=10, height=2, font=("Comic Sans MS",10)).grid(row=1, column=0, pady=4)
+
 
 with open("cancion.txt") as file_object:
     leer = file_object.read()
