@@ -36,7 +36,13 @@ def cifrar():
             cifrado=""
             for i in range(len(CadenaFinal)):
                 cifrado+=chr(ord(CadenaFinal[i])-32)
-        with open("cancion_c.txt", "w") as file_object:
+        archivoaux=""
+        for i in range(len(archivo)):
+            if archivo[i]=='.':
+                archivoaux+="_c"+archivo[i]
+            else:
+                archivoaux+=archivo[i]
+        with open(archivoaux, "w") as file_object:
             file_object.write(cifrado)
             file_object.close()
 
