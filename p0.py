@@ -2,12 +2,13 @@ from tkinter import *
 
 raiz = Tk()
 raiz.title("Practica 0")
+raiz.geometry("300x300")
 
-label1 = Label(raiz, text="c=", font=("Comic Sans MS",18)).grid(row=2, pady=4, sticky="e", padx=4)
-archivo = Label(raiz, text="Archivo", font=("Comic Sans MS",18)).grid(row=3, pady=4, sticky="e", padx=4)
+label1 = Label(raiz, text="c=", font=("Comic Sans MS",18)).grid(row=2, column=0, pady=4, sticky="e", padx=4)
+archivo = Label(raiz, text="Archivo", font=("Comic Sans MS",18)).grid(row=3, column=0, pady=4, sticky="e", padx=4)
 
-e1 = Entry(raiz)
-e2 = Entry(raiz)
+e1 = Entry(raiz, font=("Comic Sans MS",10))
+e2 = Entry(raiz, font=("Comic Sans MS",10))
 
 e1.grid(row=2, column=1, padx=10, pady=10)
 e2.grid(row=3, column=1, padx=10, pady=10)
@@ -76,7 +77,7 @@ def descifrar():
             file_object.write(descifrado)
             file_object.close()
     
-boton1 = Button(raiz, text='Cifrar', width=10, height=2, font=("Comic Sans MS",10),command=cifrar).grid(row=0, column=0, pady=4)
-boton2 = Button(raiz, text='Descifrar', width=10, height=2, font=("Comic Sans MS",10), command=descifrar).grid(row=1, column=0, pady=4)
+boton1 = Button(raiz, text='Cifrar', width=10, height=2, font=("Comic Sans MS",10),command=cifrar).grid(row=0, column=1, pady=15 ,sticky="w")
+boton2 = Button(raiz, text='Descifrar', width=10, height=2, font=("Comic Sans MS",10), command=descifrar).grid(row=1, column=1, pady=15, sticky="w")
 
 raiz.mainloop()
