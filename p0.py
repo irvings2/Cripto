@@ -61,10 +61,9 @@ def descifrar():
     else:
         descifrado=""
         for i in range(len(cadena1)):
-            if ord(cadena1[i])-c<97:
-                aux=122-ord(cadena1[i])
-                aux1=ord(cadena1[i])-97
-                descifrado+=chr(ord(cadena1[i])+aux-aux1)
+            if (ord(cadena1[i])-c)<97:
+                aux=ord(cadena1[i])-96
+                descifrado+=chr(122-c+aux)
             else:         
                 descifrado+=chr(ord(cadena1[i])-c)
         archivoaux=""
